@@ -1,27 +1,27 @@
-console.log(Vue.version)
+console.log(Vue.version)  
 
 const app = Vue.createApp({
     data: () => ({
-      now: "-",
-      toggle: true,
-      message: "Hello Vue.js!", 
-      count: 0,
-      user: {
-        lastName: "kurata",
-        firstName: "jumpei",
-        prefecture: "Tokyo"
-      },
-      colors: ["red", "green", "blue"]
+      newItem: "",
+      todos: []
     }),
     methods: {
-      onClick: function(){
-        console.log("onClick!")
-        this.now = new Date().toLocaleString()
+      addItem: function(event){
+        // console.log("clicked!")
+        if(this.newItem === "") return
+        let todo = {
+          item: this.newItem,
+          isDone: false
+        }
+        this.todos.push(todo)
+        this.newItem = ""
+      },
+      deleteItem: function(index){
+        // console.log("delete!")
+        // console.log(index)
+        this.todos.splice(index, 1)
       }
     }
-  })
-  app.component("hello-component", {
-    template: "<p>Hello!</p>"
   })
   app.mount('#app')
   

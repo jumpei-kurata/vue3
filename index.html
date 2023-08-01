@@ -7,29 +7,21 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  
+
   <div id = "app">
-    <hello-component></hello-component>
-    <hello-component></hello-component>
-    <hello-component></hello-component>
-    <p><input type="text" v-model="message"></p>
-    <p><input type="text" v-model="message"></p>
-    <pre> {{$data}}</pre>
-    <button v-on:click="onClick">Click!</button>
-     <p>{{ now }} </p>
-    <p v-if="toggle">Hello </p>
-    <p>{{ user.prefecture }} </p>
-    <p>{{ colors[1] }} </p>
-    <ol>
-      <li v-for="color in colors">{{color}}  <li>
-    <ol>
-    <input type="text" v-bind:value="message">
+    <h2>TODO List</h2>
+    <form v-on:submit.prevent>
+      <input type="text" v-model="newItem">
+      <button v-on:click="addItem">Add</button>
+    </form>
     <ul>
-      <li v-for="(value, key ) in user">
-        {{key}},{{value}}
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span v-bind:class="{done: todo.isDone}">{{ todo.item }}</span>
+        <button v-on:click="deleteItem(index)">Delete</button>
       </li>
     </ul>
-      
+    <!-- <pre>{{ $data }}</pre> -->
   </div>
   
   <script src="https://unpkg.com/vue@3.1.5"></script>

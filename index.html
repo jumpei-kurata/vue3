@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  
+  <div id = "app">
+    <hello-component></hello-component>
+    <hello-component></hello-component>
+    <hello-component></hello-component>
+    <p><input type="text" v-model="message"></p>
+    <p><input type="text" v-model="message"></p>
+    <pre> {{$data}}</pre>
+    <button v-on:click="onClick">Click!</button>
+     <p>{{ now }} </p>
+    <p v-if="toggle">Hello </p>
+    <p>{{ user.prefecture }} </p>
+    <p>{{ colors[1] }} </p>
+    <ol>
+      <li v-for="color in colors">{{color}}  <li>
+    <ol>
+    <input type="text" v-bind:value="message">
+    <ul>
+      <li v-for="(value, key ) in user">
+        {{key}},{{value}}
+      </li>
+    </ul>
+      
+  </div>
+  
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

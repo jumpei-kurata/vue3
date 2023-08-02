@@ -1,4 +1,4 @@
-[v-cloak] {
+/* [v-cloak] {
     display: none;
 }
 
@@ -8,4 +8,20 @@
 
 #app li > span.done {
     text-decoration: line-through;
+} */
+
+.large {
+    font-size: 36px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.text-blue {
+    color: blue;
 }

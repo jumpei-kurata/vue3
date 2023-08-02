@@ -9,6 +9,20 @@
 <body>
 
   <div id = "app">
+<ul>
+  <li v-for="color in colors">{{ color.name }}</li>
+</ul>
+<button v-on:click="onClick">Click!</button>
+
+    <!-- <p><input type="text" v-model="firstName"></p>
+    <p><input type="text" v-model="lastName"></p>
+    <p>fullName: {{fullName}}</p> -->
+
+    <!-- <p><input type="text" v-model="km">km</p>
+    <p><input type="text" v-model="m">m</p>
+
+    <p>{{ message }}</p>
+    <p><input type="text" v-model="message"></p>
 
     <h2>computed</h2>
     <ol>
@@ -17,19 +31,19 @@
       <li>{{ computedNumber }}</li>
     </ol>
 
-    <h2>methods</h2>
-    <ol>
+    <h2>methods</h2> -->
+    <!-- <ol>
       <li>{{ methodsNumber() }}</li>
       <li>{{ methodsNumber() }}</li>
       <li>{{ methodsNumber() }}</li>
-    </ol>
+    </ol> -->
 
-    <p>base price: <input type="text" v-model="basePrice"></p>
+    <!-- <p>base price: <input type="text" v-model="basePrice"></p>
     <p>included tax price: <input type="text" v-model="taxIncludedPrice"></p>
 
     <p v-cloak>{{ message }}</p>
     <p v-cloak>{{ reversedMessage }}</p>
-    <p v-cloak>{{ reversedMessageMethod() }}</p>
+    <p v-cloak>{{ reversedMessageMethod() }}</p> -->
 
     <!-- <h2>Mustache</h2> -->
     <!-- <a v-bind:href="url">link1</a><br>

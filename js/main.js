@@ -2,24 +2,39 @@ console.log(Vue.version)
 
 const app = Vue.createApp({
     data: () => ({
-      newItem: "",
-      todos: []
+      basePrice: 100,
+      message:'Hello Vue.js!',
+      number: 100,
+      ok: true
+
+      // message1:'Hello <span style="color:red;">Vue.js!!!!!'
     }),
-    methods: {
-      addItem: function(event){
-        // console.log("clicked!")
-        if(this.newItem === "") return
-        let todo = {
-          item: this.newItem,
-          isDone: false
-        }
-        this.todos.push(todo)
-        this.newItem = ""
+    computed: {
+      computedNumber: function() {
+        return Math.random()
       },
-      deleteItem: function(index){
-        // console.log("delete!")
-        // console.log(index)
-        this.todos.splice(index, 1)
+      taxIncludedPrice: {
+        get: function() {
+          return this.basePrice * 1.1
+        },
+        set: function(value) {
+          this.basePrice = value / 1.1
+        }
+      },
+      reversedMessage: function() {
+        return this.message.split('').reverse().join('')
+      }
+    }, methods: {
+      reversedMessageMethod: function() {
+        return this.message.split('').reverse().join('')
+    // , methods: {
+    //   clickHndler: function(event) {
+    //     this.message = this.message.split("").reverse().join("")
+    //   }
+    // }
+      },
+      methodsNumber: function(){
+        return Math.random()
       }
     }
   })

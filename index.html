@@ -9,19 +9,45 @@
 <body>
 
   <div id = "app">
-    <h2>TODO List</h2>
-    <form v-on:submit.prevent>
-      <input type="text" v-model="newItem">
-      <button v-on:click="addItem">Add</button>
-    </form>
-    <ul>
-      <li v-for="(todo, index) in todos">
-        <input type="checkbox" v-model="todo.isDone">
-        <span v-bind:class="{done: todo.isDone}">{{ todo.item }}</span>
-        <button v-on:click="deleteItem(index)">Delete</button>
-      </li>
-    </ul>
-    <!-- <pre>{{ $data }}</pre> -->
+
+    <h2>computed</h2>
+    <ol>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+    </ol>
+
+    <h2>methods</h2>
+    <ol>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+    </ol>
+
+    <p>base price: <input type="text" v-model="basePrice"></p>
+    <p>included tax price: <input type="text" v-model="taxIncludedPrice"></p>
+
+    <p v-cloak>{{ message }}</p>
+    <p v-cloak>{{ reversedMessage }}</p>
+    <p v-cloak>{{ reversedMessageMethod() }}</p>
+
+    <!-- <h2>Mustache</h2> -->
+    <!-- <a v-bind:href="url">link1</a><br>
+    <a :href="url">link2</a> -->
+
+    <!-- <p>{{ message }}</p> -->
+    <!-- <p>{{ number + 1 }}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
+    <p>{{ ok ? "YES" : "NO" }}</p> -->
+    
+    <!-- <h2>v-text</h2>
+    <p v-text="message">{{message}}</p> -->
+    <!-- <p>{{ ok ? message : ''}}</p> -->
+
+    <!-- <p v-html="message1"></p>
+    <p v-pre>{{message1}}</p>
+    <p v-once>{{message1}}</p>
+    <button v-on:click="clickHndler">Click!</button> -->
   </div>
   
   <script src="https://unpkg.com/vue@3.1.5"></script>

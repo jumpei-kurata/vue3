@@ -1,9 +1,16 @@
 const app = Vue.createApp({
   data: () => ({
+    toggle: false,
+    counter: 0,
+    message: "27",
+    checked: false,
+    colors: [],
+    color: "",
+    selected: "",
 
     // isLarge: true,
     // hasError: true,
-    color: "blue",
+    // color: "y",
     fontSize: 36,
     classObject: {
       large: true,
@@ -59,6 +66,21 @@ const app = Vue.createApp({
 
   //   }
   // }
-  })
+  }),
+  methods: {
+    // clickHandler: function(event) {
+    // clickHandler: function($event, message) {
+    clickHandler: function() {
+      this.message = new Date().toLocaleTimeString()
+      // console.log($event)
+      // this.counter++
+      // console.log(event)
+      // console.log(event.target)
+      // console.log(event.target.tagName)
+      // console.log(event.target.innerHTML)
+      // console.log(event.target.type)
+      // console.log(event.target.id)
+    }
+  }
 })
 app.mount('#app')

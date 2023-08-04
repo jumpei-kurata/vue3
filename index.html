@@ -10,112 +10,18 @@
 <body>
   <div id="app">
 
-    <input type="text" v-model.lazy="message">
-    <p>{{message}}</p>
+    <button v-on:click="show = !show">change</button>
+    <transition name="fade">
+      <p v-show="show">Hello</p>
+    </transition>
 
-    <input type="text" v-model.trim="message">
-    <p>{{message}}</p>
-    <p>{{$data}}</p>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
 
-    <input type="number" v-model="message">
-    <p>{{message + 10}}</p>
-    <input type="number" v-model.number="message">
-    <p>{{message + 10}}</p>
-
-    <select v-model="selected" multiple>
-      <option >red</option>
-      <option >green</option>
-      <option >blue</option>
-    </select>
-    <p>{{selected}}</p>
-
-    <input type="radio" id="red" value="red" v-model="color">
-    <label for="red">red</label>
-    <input type="radio" id="blue" value="blue" v-model="color">
-    <label for="blue">blue</label>
-    <input type="radio" id="green" value="green" v-model="color">
-    <label for="green">green</label><br>
-
-    <p>{{color}}</p>
-
-    <label for="red">red</label>
-    <input type="checkbox" id="red" value="red" v-model="colors">
-    <label for="blue">blue</label>
-    <input type="checkbox" id="blue" value="blue" v-model="colors">
-    <label for="green">green</label>
-    <input type="checkbox" id="green" value="green" v-model="colors">
-
-    <p>{{ colors }}</p>
-
-    <label for="checkbox">{{ checked }}</label>
-    <input type="checkbox" id="checkbox" v-model="checked">
-
-    <p>{{message}}</p>
-    <!-- <textarea>{{message}}</textarea> -->
-    <textarea v-model="message"></textarea>
-    <input type="text" v-model="message">
-    <pre>{{$data}}</pre>
-
-    <!-- <p>{{ counter }}</p> -->
-    <!-- <button v-on:click="counter++">Click1</button> -->
-    <!-- <button v-on:click="clickHandler" id="btn">Click</button> -->
-    
-<!--     
-    <button v-on:click.once="clickHandler">Now</button>
-    <p>{{message}}</p>
-
-    <button @click.once="clickHandler">Now</button>
-    <p>{{message}}</p> -->
-
-    
-
-    <!-- <p v-show="toggle">Hello Vue.js!</p> -->
-
-    <!-- <p v-if="toggle">YES</p> -->
-    <!-- <p v-else>NO</p> -->
-    <!-- <p v-if="color === 'red'">stop</p>
-    <p v-else-if="color === 'yellow'">Caution</p>
-    <p v-else-if="color === 'blue'">Go</p>
-    <p v-else>Not</p> -->
-
-    <!-- <p>Hello
-      <span v-bind:style="{ color: color, fontSize: fontSize + 'px' }">
-        Vue.js!
-      </span>
-    </p>
-
-    <p>Hello
-      <span v-bind:class="isLarge ? largeClass: ''">
-        Vue.js!
-      </span>
-    </p>
-
-    <p>Hello
-      <span v-bind:class="[isLarge ? largeClass: '', dangerClass]">
-        Vue.js!
-      </span>
-    </p>
-    
-    <p>Hello <span v-bind:class="largeClass">Vue.js!</span></p>
-    <p>Hello <span v-bind:class="[largeClass, dangerClass]">Vue.js!</span></p> -->
-
-    <!-- <p>Hello <span class="bg-gray text-blue" 
-      v-bind:class="{large: isLarge, 'text-danger': hasError}">Vue.js!</span></p>
-    <p>Hello <span :class="{large: isLarge}">Vue.js!</span></p> -->
-
-
-    <!-- <p>
-      <input type="text" v-model="keyword">
-    </p>
-    <p>{{message}}</p>
-    <ul>
-      <li v-for="item in items">
-        <a v-bind:href="item.url" target="_blank">
-          {{item.title}}
-        </a>
-        likes: {{item.likes_count}}
-      </li>
-    </ul> -->
+    <hello-component></hello-component>
+    <hello-component></hello-component>
+    <hello-component></hello-component>
 
   </div>
 
